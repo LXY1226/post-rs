@@ -133,29 +133,6 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - os: [self-hosted, linux, x64, intel]
-            runner: self-hosted-linux-intel
-            dylib: libpost.so
-            staticlib: libpost.a
-            artifact-name: linux
-
-          - os: [self-hosted, linux, arm64]
-            dylib: libpost.so
-            staticlib: libpost.a
-            rustflags: --cfg=aes_armv8
-            artifact-name: linux-arm64
-
-          - os: [self-hosted, macos, arm64]
-            dylib: libpost.dylib
-            staticlib: libpost.a
-            rustflags: --cfg=aes_armv8
-            artifact-name: macos-m1
-
-          - os: macos-13
-            dylib: libpost.dylib
-            staticlib: libpost.a
-            artifact-name: macos
-
           - os: windows-2019
             dylib: post.dll
             staticlib: post.lib
