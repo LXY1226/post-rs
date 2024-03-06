@@ -150,7 +150,7 @@ impl Scrypter {
         let max_mem_alloc_size = cast!(
             device.info(DeviceInfo::MaxMemAllocSize)?,
             DeviceInfoResult::MaxMemAllocSize
-        );
+        ) * 2;
         let max_compute_units = cast!(
             device.info(DeviceInfo::MaxComputeUnits)?,
             DeviceInfoResult::MaxComputeUnits
