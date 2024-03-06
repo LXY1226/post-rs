@@ -150,11 +150,11 @@ impl Scrypter {
         let max_mem_alloc_size = cast!(
             device.info(DeviceInfo::MaxMemAllocSize)?,
             DeviceInfoResult::MaxMemAllocSize
-        ) * 2;
+        ) * 3;
         let max_compute_units = cast!(
             device.info(DeviceInfo::MaxComputeUnits)?,
             DeviceInfoResult::MaxComputeUnits
-        ) * 2;
+        );
         let max_wg_size = device.max_wg_size()?;
         log::info!(
             "device memory: {} MB, max_mem_alloc_size: {} MB, max_compute_units: {max_compute_units}, max_wg_size: {max_wg_size}",
