@@ -54,7 +54,8 @@ impl PostMetadata {
 
 pub fn load(datadir: &Path) -> eyre::Result<PostMetadata> {
     let metatada_path = datadir.join(METADATA_FILE_NAME);
-    log::info!("loading metadata: {metatada_path.display()}");
+    let metadata_display = metatada_path.display();
+    log::info!("loading metadata: {metadata_display}");
     let metadata_file = File::open(metatada_path)?;
     let reader = BufReader::new(metadata_file);
     let m = serde_json::from_reader(reader)?;
