@@ -206,6 +206,9 @@ impl Scrypter {
             max_global_work_size_based_on_max_mem_alloc_size,
             max_global_work_size_based_on_total_mem,
         );
+        log::info!(
+            "max_global_work_size_based_on_total_mem: {max_global_work_size_based_on_total_mem}, max_global_work_size_based_on_max_mem_alloc_size: {max_global_work_size_based_on_max_mem_alloc_size}, max_global_work_size: {max_global_work_size}"
+        );
         let local_work_size = preferred_wg_size_mult;
         // Round down to nearest multiple of local_work_size
         let global_work_size = (max_global_work_size / local_work_size) * local_work_size;
